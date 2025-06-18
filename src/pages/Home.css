@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white;
+  }
+  
+  .hide-scrollbar {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  
+  /* Container Styles */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header Styles */
+  .home-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .home-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4a90e2;
+  }
+  
+  .home-header p {
+    font-size: 16px;
+    color: #aaa;
+  }
+  
+  /* Post Card Styles */
+  .post-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .post-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-card p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .post-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .post-card .post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .post-card .post-actions button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .post-card .post-actions button:hover {
+    background-color: #357ab8;
+  }
+  
+  /* Comment Section Styles */
+  .comments-section {
+    margin-top: 20px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .comments-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .comments-section p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+  
+  .comments-section input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Styles */
+  .home-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .home-footer a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  .home-footer a:hover {
+    text-decoration: underline;
+  }

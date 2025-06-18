@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9933; /* Saffron */
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('https://via.placeholder.com/1600x600?text=Indian+Motifs');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    color: white;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .cta-buttons button {
+    padding:10px 20px;
+    margin-top:15px;
+    margin-right:10px;
+    border:none;
+    cursor:pointer;
+  }
+  
+  .join-btn {
+   background-color:#138808; /* Green */
+   color:white; 
+  }
+  
+  .login-btn {
+   background-color:#000080; /* Navy Blue */
+   color:white; 
+  }
+  
+  /* Features Section */
+  .features {
+   padding:60px 20px; 
+   text-align:center; 
+  }
+  
+  .feature-cards{
+   display:flex; 
+   flex-wrap:wrap; 
+   justify-content:center; 
+   gap:20px; 
+  }
+  
+  .card{
+   width:200px; 
+   padding:20px; 
+   border-radius:8px; 
+   box-shadow:0px 2px 5px rgba(0,0,0,0.2); 
+  }
+  
+  .icon{
+   font-size:40px; 
+  }
+  
+  /* Testimonials Section */
+  .testimonials{
+   background-color:#f9f9f9; 
+   padding:60px; 
+   text-align:center; 
+  }
+  
+  .testimonial-card{
+   max-width:500px; 
+   margin:auto; 
+   margin-bottom:30px; 
+   font-style:italic; 
+  }
+  
+  /* Footer */
+  .footer{
+   background-color:#FF9933; /* Saffron */
+   color:white; 
+   text-align:center; 
+   padding:15px; 
+  }
+  
+  /* Responsive Design */
+  @media(max-width:768px){
+   .feature-cards{
+     flex-direction:column; 
+     align-items:center;  
+   }
+   .nav-links{
+     display:none; /* Optional mobile menu toggle can be added later */
+   }
+  }
+  
