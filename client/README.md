@@ -1,2 +1,3 @@
 # CampusConnect
-This project is a social media platform built using React.js, Tailwind CSS for frontend and Node.js and MongoDB for backend. It provides users with features such as Authentication, sharing experiences, managing profiles, interacting with posts, and real-time updates. The application is structured with a focus on modularity, scalability, and user experience.
+This project is a social media platform built using React.js, Tailwind CSS for frontend and Node.js, Express.js and MongoDB for backend. It provides users with features such as Authentication, sharing experiences, managing profiles, interacting with posts, and real-time updates. The application is structured with a focus on modularity, scalability, and user experience.The project demonstrates a full-stack web application with real-time interactivity and a clean, responsive UI.
+boxes, etc.
