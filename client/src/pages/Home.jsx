@@ -148,6 +148,7 @@ export default function Home() {
             className=" fixed top-33 left-35 bg-gray-900 rounded shadow  
                         flex flex-col items-center p-6 w-80 "
           >
+            
             <img
               src={user.profilePic}
               alt=""

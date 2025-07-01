@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 import Navigation from "../components/Navigation";
 import Button1 from "../components/ui/Button1";
+import ReactDOM from "react-dom";
 
 export default function Profile() {
   const { username } = useParams();
@@ -17,6 +18,7 @@ export default function Profile() {
   const [requestReceived, setRequestReceived] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [commentTexts, setCommentTexts] = useState({});
+  const [showEditPopup, setShowEditPopup] = useState(false);
 
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState("");
@@ -378,40 +380,8 @@ export default function Profile() {
                 </>
               )}
             </div>
-            {/* ...rest of your profile card... */}
-            {edit ? (
-              <>
-                <div className="flex flex-col items-center gap-4 mb-4">
-                  <input
-                    className="rounded px-2 py-1 text-white border border-white bg-gray-800 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={form.name}
-                    placeholder="Name"
-                    autoFocus
-                    onFocus={(e) => e.target.select()}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  />
-                  <input
-                    className="rounded px-2 py-1 text-white border border-white bg-gray-800 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={form.college}
-                    placeholder="College"
-                    onFocus={(e) => e.target.select()}
-                    onChange={(e) =>
-                      setForm({ ...form, college: e.target.value })
-                    }
-                  />
-                  <input
-                    className="rounded px-2 py-1 text-white border border-white bg-gray-800 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={form.phone}
-                    placeholder="Phone"
-                    onFocus={(e) => e.target.select()}
-                    onChange={(e) =>
-                      setForm({ ...form, phone: e.target.value })
-                    }
-                  />
-                  <Button1 onClick={handleSave}>Save</Button1>
-                </div>
-              </>
-            ) : (
+
+            {!edit && (
               <>
                 <div className="pb-4">
                   <div className="text-xl font-bold text-left text-white ">
@@ -431,9 +401,15 @@ export default function Profile() {
                   </div>
                 </div>
                 {loggedInUser.username === username && (
-                  <Button1 onClick={() => setEdit(true)}>Edit</Button1>
+                  <Button1
+                    onClick={() => {
+                      setEdit(true);
+                      setShowEditPopup(true);
+                    }}
+                  >
+                    Edit
+                  </Button1>
                 )}
-                {/* Friend Request/Accept/Remove Logic */}
                 {loggedInUser.username !== username && (
                   <>
                     {!isFriend && !friendRequested && !requestReceived && (
@@ -462,9 +438,7 @@ export default function Profile() {
                         <div className="mt-4 text-blue-400">
                           You are friends
                         </div>
-                        <Button1
-                          onClick={handleRemoveFriend}
-                        >
+                        <Button1 onClick={handleRemoveFriend}>
                           Remove Friend
                         </Button1>
                       </>
@@ -904,6 +878,59 @@ export default function Profile() {
           </div>
         </div>
       </div>
+
+      {edit &&
+        showEditPopup &&
+        ReactDOM.createPortal(
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h3 className="text-lg text-white font-bold mb-4">
+                Edit Profile
+              </h3>
+              <div className="flex flex-col items-center gap-4 mb-4">
+                <input
+                  className="modal-input"
+                  value={form.name}
+                  placeholder="Name"
+                  autoFocus
+                  onFocus={(e) => e.target.select()}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                />
+                <input
+                  className="modal-input"
+                  value={form.college}
+                  placeholder="College"
+                  onFocus={(e) => e.target.select()}
+                  onChange={(e) =>
+                    setForm({ ...form, college: e.target.value })
+                  }
+                />
+                <input
+                  className="modal-input"
+                  value={form.phone}
+                  placeholder="Phone"
+                  onFocus={(e) => e.target.select()}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                />
+              </div>
+              <div className="flex gap-20 item-center justify-center">
+                <button className="modal-button" onClick={handleSave}>
+                  Save
+                </button>
+                <button
+                  className="modal-button"
+                  onClick={() => {
+                    setEdit(false);
+                    setShowEditPopup(false);
+                  }}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
